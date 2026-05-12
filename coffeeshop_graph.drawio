@@ -1,0 +1,401 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram name="Схема БД">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sn_barista" value="Barista (NODE)&#10;─────────────&#10;id INT PK&#10;name NVARCHAR(50)&#10;experience_years INT&#10;city NVARCHAR(30)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="100" y="300" width="200" height="110" />
+        </mxCell>
+        <mxCell id="sn_supplier" value="Supplier (NODE)&#10;─────────────&#10;id INT PK&#10;name NVARCHAR(100)&#10;country NVARCHAR(50)&#10;specialty NVARCHAR(50)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="650" y="100" width="200" height="110" />
+        </mxCell>
+        <mxCell id="sn_customer" value="Customer (NODE)&#10;─────────────&#10;id INT PK&#10;name NVARCHAR(50)&#10;loyalty_level NVARCHAR(20)&#10;registration_date DATE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="650" y="500" width="200" height="110" />
+        </mxCell>
+        <mxCell id="se_ww" value="WorksWith (EDGE)&#10;─────────────&#10;start_date DATE&#10;volume_kg_per_month INT&#10;&#10;Barista → Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="380" y="140" width="190" height="90" />
+        </mxCell>
+        <mxCell id="se_srv" value="Serves (EDGE)&#10;─────────────&#10;service_date DATE&#10;rating INT&#10;&#10;Barista → Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="380" y="460" width="190" height="90" />
+        </mxCell>
+        <mxCell id="se_pref" value="Prefers (EDGE)&#10;─────────────&#10;preference_level INT&#10;since_date DATE&#10;&#10;Customer → Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="650" y="310" width="200" height="90" />
+        </mxCell>
+        <mxCell id="sc1" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="sn_barista" target="se_ww">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sc2" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="se_ww" target="sn_supplier">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sc3" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="sn_barista" target="se_srv">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sc4" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="se_srv" target="sn_customer">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sc5" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="sn_customer" target="se_pref">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="sc6" value="" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="se_pref" target="sn_supplier">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="title1" value="Схема графовой БД «Кофейня»" style="text;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="350" y="20" width="400" height="40" />
+        </mxCell>
+        <mxCell id="lg1" value="Barista (NODE)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="100" y="660" width="180" height="40" />
+        </mxCell>
+        <mxCell id="lg2" value="Supplier (NODE)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="330" y="660" width="180" height="40" />
+        </mxCell>
+        <mxCell id="lg3" value="Customer (NODE)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="560" y="660" width="180" height="40" />
+        </mxCell>
+        <mxCell id="lg4" value="EDGE таблица" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="790" y="660" width="180" height="40" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Граф данных">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nb_1" value="Анна&#10;(5 л, Минск)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="40" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_2" value="Борис&#10;(3 л, Минск)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="110" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_3" value="Виктория&#10;(7 л, Гродно)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="180" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_4" value="Глеб&#10;(2 л, Брест)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="250" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_5" value="Диана&#10;(4 л, Гомель)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="320" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_6" value="Евгений&#10;(8 л, Минск)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="390" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_7" value="Жанна&#10;(1 л, Витебск)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="460" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_8" value="Захар&#10;(6 л, Могилёв)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="530" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_9" value="Ирина&#10;(9 л, Гродно)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="600" width="150" height="50" />
+        </mxCell>
+        <mxCell id="nb_10" value="Кирилл&#10;(3 л, Брест)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="670" width="150" height="50" />
+        </mxCell>
+        <mxCell id="ns_1" value="Brazil Santos&#10;(Бразилия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="609" y="86" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_2" value="Colombia Supremo&#10;(Колумбия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="500" y="102" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_3" value="Ethiopia Yirgacheffe&#10;(Эфиопия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="404" y="149" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_4" value="Vietnam Robusta&#10;(Вьетнам)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="332" y="221" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_5" value="Guatemala Antigua&#10;(Гватемала)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="294" y="310" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_6" value="India Monsooned&#10;(Индия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="294" y="405" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_7" value="Kenya AA&#10;(Кения)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="332" y="494" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_8" value="Sumatra Mandheling&#10;(Индонезия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="404" y="566" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_9" value="Costa Rica Tarrazu&#10;(Коста-Рика)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="500" y="613" width="150" height="44" />
+        </mxCell>
+        <mxCell id="ns_10" value="Jamaica Blue Mtn&#10;(Ямайка)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="610" y="630" width="150" height="44" />
+        </mxCell>
+        <mxCell id="nc_1" value="Иван&#10;(Gold)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="130" y="358" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_2" value="Мария&#10;(Silver)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="140" y="290" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_3" value="Пётр&#10;(Bronze)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="172" y="230" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_4" value="Светлана&#10;(Gold)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="219" y="186" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_5" value="Алексей&#10;(Silver)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="278" y="163" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_6" value="Ольга&#10;(Bronze)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="341" y="163" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_7" value="Дмитрий&#10;(Gold)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="399" y="186" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_8" value="Елена&#10;(Silver)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="447" y="230" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_9" value="Сергей&#10;(Bronze)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="479" y="290" width="130" height="44" />
+        </mxCell>
+        <mxCell id="nc_10" value="Татьяна&#10;(Gold)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="490" y="357" width="130" height="44" />
+        </mxCell>
+        <mxCell id="ew_1_1" value="120 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_1" target="ns_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_1_3" value="80 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_1" target="ns_3">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_2_2" value="150 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_2" target="ns_2">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_3_1" value="100 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_3" target="ns_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_3_4" value="90 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_3" target="ns_4">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_4_5" value="200 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_4" target="ns_5">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_5_6" value="110 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_5" target="ns_6">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_6_7" value="130 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_6" target="ns_7">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_7_8" value="70 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_7" target="ns_8">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_8_9" value="160 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_8" target="ns_9">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_9_10" value="50 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_9" target="ns_10">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ew_10_2" value="140 кг/мес" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#6c8ebf;fontColor=#6c8ebf;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_10" target="ns_2">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_1_1" value="★9" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_1" target="nc_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_1_2" value="★8" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_1" target="nc_2">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_2_3" value="★7" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_2" target="nc_3">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_3_1" value="★10" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_3" target="nc_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_3_4" value="★9" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_3" target="nc_4">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_4_5" value="★8" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_4" target="nc_5">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_5_6" value="★7" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_5" target="nc_6">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_6_7" value="★9" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_6" target="nc_7">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_7_8" value="★6" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_7" target="nc_8">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_8_9" value="★8" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_8" target="nc_9">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_9_10" value="★10" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_9" target="nc_10">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="esrv_10_1" value="★9" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#d6b656;fontColor=#d6b656;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nb_10" target="nc_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_1_1" value="pref=5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_1" target="ns_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_1_3" value="pref=4" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_1" target="ns_3">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_2_2" value="pref=4" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_2" target="ns_2">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_3_4" value="pref=3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_3" target="ns_4">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_4_5" value="pref=5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_4" target="ns_5">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_5_6" value="pref=4" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_5" target="ns_6">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_6_7" value="pref=3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_6" target="ns_7">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_7_8" value="pref=5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_7" target="ns_8">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_8_9" value="pref=4" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_8" target="ns_9">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_9_10" value="pref=3" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_9" target="ns_10">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_10_2" value="pref=5" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_10" target="ns_2">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="ep_3_1" value="pref=2" style="edgeStyle=orthogonalEdgeStyle;dashed=1;strokeColor=#82b366;fontColor=#82b366;fontSize=9;endArrow=block;endFill=1;" parent="1" edge="1" source="nc_3" target="ns_1">
+          <mxGeometry as_="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="title2" value="Граф данных «Кофейня» (все узлы и рёбра)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="400" y="5" width="500" height="32" />
+        </mxCell>
+        <mxCell id="lg2_1" value="Barista" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="760" width="130" height="36" />
+        </mxCell>
+        <mxCell id="lg2_2" value="Supplier" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="220" y="760" width="130" height="36" />
+        </mxCell>
+        <mxCell id="lg2_3" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="380" y="760" width="130" height="36" />
+        </mxCell>
+        <mxCell id="lge1" value="WorksWith (Barista→Supplier)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffffff;strokeColor=#6c8ebf;fontColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="540" y="760" width="190" height="36" />
+        </mxCell>
+        <mxCell id="lge2" value="Serves (Barista→Customer)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffffff;strokeColor=#d6b656;fontColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="740" y="760" width="190" height="36" />
+        </mxCell>
+        <mxCell id="lge3" value="Prefers (Customer→Supplier)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=10;fillColor=#ffffff;strokeColor=#82b366;fontColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="940" y="760" width="190" height="36" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="MATCH цепочки">
+    <mxGraphModel dx="1422" dy="762" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title3" value="Примеры MATCH-запросов (цепочки узлов)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="300" y="10" width="600" height="36" />
+        </mxCell>
+        <mxCell id="ql_0" value="Q1: Анна → обслуживает → Клиент → предпочитает → Поставщик" style="text;html=1;fontSize=10;fontStyle=2;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="80" width="900" height="22" />
+        </mxCell>
+        <mxCell id="qn_0_0" value="Barista&#10;(Анна)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="106" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_0_1" value="Serves&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="214" y="106" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_0_2" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="328" y="106" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_0_3" value="Prefers&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="482" y="106" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_0_4" value="Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="596" y="106" width="150" height="50" />
+        </mxCell>
+        <mxCell id="ql_1" value="Q2: Barista → WorksWith → Supplier ← Prefers ← Customer (AND Barista→Serves→Customer)" style="text;html=1;fontSize=10;fontStyle=2;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="210" width="900" height="22" />
+        </mxCell>
+        <mxCell id="qn_1_0" value="Barista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="236" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_1_1" value="WorksWith&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="214" y="236" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_1_2" value="Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="328" y="236" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_1_3" value="◄── Prefers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="482" y="236" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_1_4" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="596" y="236" width="150" height="50" />
+        </mxCell>
+        <mxCell id="ql_2" value="Q3: Customer ← Serves ← Barista → WorksWith → Supplier  (Иван)" style="text;html=1;fontSize=10;fontStyle=2;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="340" width="900" height="22" />
+        </mxCell>
+        <mxCell id="qn_2_0" value="Customer&#10;(Иван)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="366" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_2_1" value="◄── Serves" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="214" y="366" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_2_2" value="Barista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="328" y="366" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_2_3" value="WorksWith&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="482" y="366" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_2_4" value="Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="596" y="366" width="150" height="50" />
+        </mxCell>
+        <mxCell id="ql_3" value="Q4: Barista → Serves → Customer → Prefers → Supplier (страна=Эфиопия)" style="text;html=1;fontSize=10;fontStyle=2;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="470" width="900" height="22" />
+        </mxCell>
+        <mxCell id="qn_3_0" value="Barista" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="496" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_3_1" value="Serves&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="214" y="496" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_3_2" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="328" y="496" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_3_3" value="Prefers&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="482" y="496" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_3_4" value="Supplier&#10;(Эфиопия)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="596" y="496" width="150" height="50" />
+        </mxCell>
+        <mxCell id="ql_4" value="Q5: Customer ← Serves ← Barista  AND  Customer → Prefers → Supplier (опыт&gt;5)" style="text;html=1;fontSize=10;fontStyle=2;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="600" width="900" height="22" />
+        </mxCell>
+        <mxCell id="qn_4_0" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="626" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_4_1" value="◄── Serves" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="214" y="626" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_4_2" value="Barista&#10;(опыт&gt;5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="328" y="626" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_4_4" value="Customer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="492" y="626" width="150" height="50" />
+        </mxCell>
+        <mxCell id="qn_4_5" value="Prefers&#10;──►" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#aaaaaa;fontSize=10;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="646" y="626" width="110" height="50" />
+        </mxCell>
+        <mxCell id="qn_4_6" value="Supplier" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="760" y="626" width="150" height="50" />
+        </mxCell>
+        <mxCell id="sp_title" value="SHORTEST_PATH запросы" style="text;html=1;fontSize=13;fontStyle=1;align=left;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="700" width="400" height="28" />
+        </mxCell>
+        <mxCell id="sp1_box" value="SP1  (+)   Иван  ──[Prefers]──▶  Supplier  ◀──[WorksWith]──  Barista  ──[Serves]──▶  Татьяна&#10;        (один или более шагов, STRING_AGG + LAST_VALUE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="730" width="1050" height="48" />
+        </mxCell>
+        <mxCell id="sp2_box" value="SP2  ({1,3})   Иван  ──[Prefers]──▶  Supplier  ◀──[WorksWith]──  Barista  ──[Serves]──▶  Дмитрий&#10;        (от 1 до 3 шагов, STRING_AGG + LAST_VALUE)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry as_="geometry" x="60" y="790" width="1050" height="48" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
